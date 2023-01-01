@@ -1,38 +1,167 @@
-.App {
-  text-align: center;
+html,
+body {
+  background-color: #121212;
+  color: #fff;
+  user-select: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#verticalFlex {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: calc(100vh - 6px);
+  padding: 0px 5px;
+  margin: 0px;
 }
 
-.App-link {
-  color: #61dafb;
+
+#flex {
+  display: flex;
+  flex-direction: row;
+  height: calc(100% - 35px);
+  flex-grow: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.panel {
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+#commandPanel {
+  display: flex;
+  flex-direction: column;
+}
+
+.leftPanel {
+  flex-basis: 25%;
+  margin-right: 10px;
+  margin-top: 0px;
+  padding: 3px 5px 3px 5px;
+  min-height: calc(100vh - 6px);
+  max-height: calc(100vh - 6px);
+  max-width: 300px;
+  position: relative;
+  overflow: scroll;
+}
+
+#controls {
+  text-align: right;
+  margin-top: auto;
+
+}
+
+.leftPanel.narrow {
+  max-width: 200px;
+}
+
+@media only screen and (max-width: 850px) {
+  .leftPanel.narrow {
+    max-width: 105px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+#selectorPanel {
+  background-color: rgba(47, 47, 47, .95);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 300px;
+}
+
+@media only screen and (min-height: 500px) {
+  .leftPanel {
+    overflow: hidden;
   }
+}
+
+@media only screen and (max-width: 1000px) {
+  .panel {
+    max-width: calc(100vh);
+  }
+}
+
+
+#mainPanel {
+  flex-grow: 5;
+  flex-basis: 50%;
+  padding: 0px;
+  min-height: calc(100vh - 4px);
+  max-height: calc(100vh - 4px);
+  position: relative;
+}
+
+#drawPanel {
+  width: 100%;
+  height: 100%;
+}
+
+input[type=range] {
+  margin: 0px;
+}
+
+.resourceName {
+  text-align: right;
+}
+
+@media only screen and (min-width: 1000px) {
+  .resourceName {
+    padding-left: 15px;
+    font-size: 1.5em;
+  }
+}
+
+h3.thin {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+p.thin {
+  margin: 0px;
+}
+
+.realResource .resource {
+  float: right;
+}
+
+.resource {
+  height: calc(100% - 6px);
+  /*width: 100%;*/
+  /*background-color: rgb(87, 87, 87);*/
+  position: relative;
+  margin: 0px 0px 0px 0px;
+}
+
+.resource>div {
+  border-radius: 6px;
+}
+
+#modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  z-index: 500
+}
+
+#modal {
+  position: fixed;
+  background-color: rgba(47, 47, 47, .95);
+  width: 40%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px;
+  border: 2px white solid;
+  border-radius: 3px;
+}
+
+.popGrid {
+  border-collapse: collapse;
+}
+
+.popGrid td {
+  border: 1px #555 solid;
 }
